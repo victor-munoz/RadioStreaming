@@ -6,5 +6,5 @@
             android:animation="@animator/path_morph_pause_to_play" />
     <target
             android:name="arrow"
-            android:animation="@animator/rotate" />
+            android:animation="@animator/rotate_left" />
 </animated-vector>

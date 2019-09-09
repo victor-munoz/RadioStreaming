@@ -11,7 +11,6 @@ import com.google.android.exoplayer2.util.Util
 import dagger.Module
 import dagger.Provides
 import victor.digitalmediahub.task.App.Companion.RADIO_URL
-import victor.digitalmediahub.task.R
 import victor.digitalmediahub.task.player.ExoPlayerImpl
 import victor.digitalmediahub.task.player.RadioPlayer
 
@@ -20,10 +19,10 @@ class ExoPlayerModule {
 
     @Provides
     internal fun provideDefaultDataSourceFactory(context: Context): DefaultDataSourceFactory {
-        return DefaultDataSourceFactory(context, Util.getUserAgent(context, context.resources.getString(R.string.app_name)))
+        return DefaultDataSourceFactory(context, Util.getUserAgent(context, context.resources.getString(victor.digitalmediahub.task.R.string.app_name)))
     }
     @Provides
-    internal fun providesProgressiveMediaSource(dataSourceFactory:DefaultDataSourceFactory): MediaSource {
+    internal fun providesMediaSource(dataSourceFactory:DefaultDataSourceFactory): MediaSource {
         return ProgressiveMediaSource.Factory(dataSourceFactory) .createMediaSource(Uri.parse(RADIO_URL))
     }
     @Provides
